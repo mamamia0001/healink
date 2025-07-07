@@ -1,0 +1,64 @@
+<div class="dashboard-container">
+  <aside class="sidebar">
+    <div class="sidebar-header">
+      <h3>Rekam Medis</h3>
+    </div>
+    <nav class="sidebar-nav">
+      <ul>
+        <li><a routerLink="/dashboard-pasien" class="active"><i class="fas fa-home"></i> Beranda</a></li>
+        <li><a routerLink="/profil"><i class="fas fa-user-circle"></i> Profil Saya</a></li>
+        <li><a routerLink="/riwayat-medis"><i class="fas fa-history"></i> Riwayat Medis</a></li>
+        <li><a routerLink="/jadwal-periksa"><i class="fas fa-calendar-alt"></i> Jadwal Periksa</a></li>
+        <li><a routerLink="/pesan"><i class="fas fa-envelope"></i> Pesan</a></li>
+        <li><a (click)="logout()"><i class="fas fa-sign-out-alt"></i> Keluar</a></li>
+      </ul>
+    </nav>
+  </aside>
+
+  <main class="main-content">
+    <header class="header">
+      <h2>Selamat Datang, {{ userName }}!</h2>
+      <div class="header-actions">
+        <button class="btn-primary">Buat Janji Temu</button>
+      </div>
+    </header>
+
+    <section class="content-area">
+      <div class="info-cards">
+        <div class="card">
+          <h3>Pemeriksaan Terakhir</h3>
+          <p>{{ lastVisitDate ? (lastVisitDate | date: 'mediumDate') : 'Belum ada data' }}</p>
+          <p *ngIf="lastVisitDate">Dengan: Dr. {{ lastDoctor }}</p>
+        </div>
+        <div class="card">
+          <h3>Janji Temu Mendatang</h3>
+          <p *ngIf="nextAppointmentDate">{{ nextAppointmentDate | date: 'short' }}</p>
+          <p *ngIf="!nextAppointmentDate">Belum ada janji temu</p>
+          <p *ngIf="nextAppointmentDate">Dengan: Dr. {{ nextAppointmentDoctor }}</p>
+        </div>
+        <div class="card">
+          <h3>Obat Saat Ini</h3>
+          <p *ngIf="currentMedications.length > 0">
+            <span *ngFor="let medication of currentMedications">{{ medication }}<br></span>
+          </p>
+          <p *ngIf="currentMedications.length === 0">Tidak ada obat aktif</p>
+        </div>
+      </div>
+
+      <div class="recent-activity">
+        <h3>Aktivitas Terbaru</h3>
+        <ul>
+          <li><i class="fas fa-clipboard-list"></i> Hasil Lab: <span class="highlight">Normal</span> - 20 Mei 2024</li>
+          <li><i class="fas fa-notes-medical"></i> Resep Baru Diterbitkan - 15 Mei 2024</li>
+          <li><i class="fas fa-calendar-check"></i> Janji Temu Selesai dengan Dr. Anisa - 10 Mei 2024</li>
+        </ul>
+      </div>
+
+      <div class="further-info">
+        <h3>Informasi Kesehatan</h3>
+        <p>Anda dapat melihat detail riwayat medis, hasil lab, dan jadwal konsultasi di menu sidebar.</p>
+        <p>Jika ada pertanyaan, silakan gunakan fitur pesan untuk menghubungi klinik.</p>
+      </div>
+    </section>
+  </main>
+</div>

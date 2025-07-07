@@ -1,11 +1,13 @@
+// app.routes.ts
 import { Routes } from '@angular/router';
-import { RoleSelector } from './presentation/auth/role-selector/role-selector';
-import { LoginDoctor } from './presentation/auth/login-doctor/login-doctor';
-import { LoginPatient } from './presentation/auth/login-patient/login-patient';
+import { Login} from './login/login';
+import { Register } from './register/register';
+import { DashboardPasien } from './dashboard-pasien/dashboard-pasien';
 
 export const routes: Routes = [
-  { path: '', redirectTo: 'start', pathMatch: 'full' },
-  { path: 'start', component: RoleSelector },
-  { path: 'auth/login-doctor', component: LoginDoctor },
-  { path: 'auth/login-patient', component: LoginPatient },
+    { path: 'login', component: Login },
+    { path: 'register', component: Register },
+    { path: '', redirectTo: '/login', pathMatch: 'full' },
+    { path: 'dashboard-pasien', component: DashboardPasien },
+    { path: '**', redirectTo: '/dashboard-pasien' }
 ];

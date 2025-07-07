@@ -1,12 +1,16 @@
+// src/app/app.ts yang diperbaiki
+
 import { Component } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
+import { CommonModule } from '@angular/common'; // Biasanya baik untuk ditambahkan juga
 
 @Component({
   selector: 'app-root',
-  imports: [RouterOutlet],
+  standalone: true,
+  imports: [RouterOutlet, CommonModule],
   templateUrl: './app.html',
-  styleUrl: './app.scss'
+  styleUrl: './app.css'
 })
 export class App {
-  protected title = 'healink';
+  protected title = 'app-rekam-medis';
 }

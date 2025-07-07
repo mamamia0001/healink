@@ -1,0 +1,26 @@
+<div class="login-container">
+  <div class="login-card">
+    <div class="brand-section">
+      <img src="assets/healink_logo.png" alt="HEALINK Logo" class="brand-logo">
+      <p class="brand-tagline">"keep in track!"</p>
+    </div>
+
+    <form class="login-form" (ngSubmit)="login()">
+      <div class="input-group">
+        <mat-icon class="input-icon">person</mat-icon>
+        <input type="text" placeholder="Username" class="input-field" required [(ngModel)]="username" name="username">
+      </div>
+
+      <div class="input-group">
+        <mat-icon class="input-icon">lock</mat-icon>
+        <input type="password" placeholder="Password" class="input-field" required [(ngModel)]="password" name="password">
+      </div>
+
+      <button type="submit" class="login-button">Login</button>
+    </form>
+
+    <div class="register-section">
+      Don't have an account? <a routerLink="/register" class="register-link">Register</a>
+    </div>
+  </div>
+</div>

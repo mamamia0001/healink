@@ -1,18 +1,18 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { RoleSelector } from './role-selector';
+import { DashboardPasien } from './dashboard-pasien';
 
-describe('RoleSelector', () => {
-  let component: RoleSelector;
-  let fixture: ComponentFixture<RoleSelector>;
+describe('DashboardPasien', () => {
+  let component: DashboardPasien;
+  let fixture: ComponentFixture<DashboardPasien>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [RoleSelector]
+      imports: [DashboardPasien]
     })
     .compileComponents();
 
-    fixture = TestBed.createComponent(RoleSelector);
+    fixture = TestBed.createComponent(DashboardPasien);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });
