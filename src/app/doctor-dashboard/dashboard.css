@@ -1,0 +1,31 @@
+.dashboard-container {
+  padding: 2rem;
+  font-family: 'Poppins', sans-serif;
+}
+
+input[type='text'] {
+  padding: 0.5rem;
+  width: 300px;
+  margin-right: 1rem;
+}
+
+.add-btn {
+  padding: 0.5rem 1rem;
+  background-color: #2196f3;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+.patients-list {
+  margin-top: 2rem;
+}
+
+.patient-card {
+  border: 1px solid #ddd;
+  padding: 1rem;
+  border-radius: 6px;
+  margin-bottom: 1rem;
+  background: #f9f9f9;
+}
