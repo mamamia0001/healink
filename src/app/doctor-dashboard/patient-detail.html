@@ -1,0 +1,24 @@
+<div class="patient-detail">
+  <h2>Patient Medical Record</h2>
+
+  <div class="info">
+    <p><strong>Name:</strong> {{ patient.name }}</p>
+    <p><strong>Birth Date:</strong> {{ patient.birthDate }}</p>
+    <p><strong>Blood Type:</strong> {{ patient.bloodType }}</p>
+    <p><strong>Medical ID:</strong> {{ patient.medicalId }}</p>
+  </div>
+
+  <div class="section">
+    <h3>Diagnosis</h3>
+    <ul>
+      <li *ngFor="let d of patient.diagnosis">{{ d }}</li>
+    </ul>
+    <button>+ Add Diagnosis</button>
+  </div>
+
+  <div class="section">
+    <h3>Prescription</h3>
+    <p>{{ patient.prescription }}</p>
+    <button>Edit Prescription</button>
+  </div>
+</div>

@@ -1,19 +1,18 @@
 <app-navbar></app-navbar>
-<div class="dashboard-container">
-  <h1>Welcome, Doctor!</h1>
-  <input type="text" placeholder="Search patients..." />
-  <button class="add-btn">+ Add Patient</button>
 
 <div class="dashboard-container">
-  <h1>Welcome, Doctor!</h1>
-  <input type="text" placeholder="Search patients..." />
-  <button class="add-btn">+ Add Patient</button>
+  <div class="top-bar">
+    <search-bar (search)="handleSearch($event)"></search-bar>
+    <add-patient-button (add)="handleAddPatient()"></add-patient-button>
+  </div>
 
   <div class="patients-list">
-    <div class="patient-card">
-      <p><strong>Name:</strong> John Doe</p>
-      <p><strong>Medical ID:</strong> MED12345</p>
-      <button>View Record</button>
-    </div>
+    <patient-card
+      *ngFor="let p of patients"
+      [name]="p.name"
+      [medicalId]="p.medicalId"
+      [birthDate]="p.birthDate"
+      (view)="viewPatient(p)"
+    ></patient-card>
   </div>
 </div>

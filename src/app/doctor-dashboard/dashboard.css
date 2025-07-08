@@ -3,6 +3,13 @@
   font-family: 'Poppins', sans-serif;
 }
 
+.top-bar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 1rem;
+}
+
 input[type='text'] {
   padding: 0.5rem;
   width: 300px;

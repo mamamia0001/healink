@@ -1,0 +1,18 @@
+.patient-card {
+  border: 1px solid #ddd;
+  padding: 1rem;
+  border-radius: 6px;
+  background: #f9f9f9;
+  margin-bottom: 1rem;
+  font-family: 'Poppins', sans-serif;
+}
+
+button {
+  background-color: #2196f3;
+  color: white;
+  border: none;
+  padding: 0.4rem 0.8rem;
+  border-radius: 4px;
+  cursor: pointer;
+  margin-top: 0.5rem;
+}
