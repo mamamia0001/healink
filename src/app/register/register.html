@@ -40,6 +40,30 @@
         </mat-form-field>
       </div>
 
+      <div class="input-group">
+        <mat-form-field appearance="outline">
+          <mat-label>Mobile Number</mat-label>
+          <mat-icon matPrefix class="input-icon">phone</mat-icon>
+          <input matInput type="number" placeholder="Enter your number" required [(ngModel)]="mobileNumber" name="mobile number" #mobileNumberInput="ngModel">
+          <mat-error *ngIf="mobileNumberInput.invalid && (mobileNumberInput.dirty || mobileNumberInput.touched)">
+            Mobile Number is required.
+          </mat-error>
+        </mat-form-field>
+      </div>
+
+      <div class="input-group">
+        <mat-form-field appearance="outline">
+          <mat-label>Tanggal Lahir</mat-label>
+          <mat-icon matPrefix class="input-icon">calendar_today</mat-icon>
+          <input matInput [matDatepicker]="picker" placeholder="Pilih tanggal lahir" required [(ngModel)]="tanggalLahir" name="tanggalLahir" #tanggalLahirInput="ngModel">
+          <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+          <mat-datepicker #picker></mat-datepicker>
+          <mat-error *ngIf="tanggalLahirInput.invalid && (tanggalLahirInput.dirty || tanggalLahirInput.touched)">
+            <span *ngIf="tanggalLahirInput.errors?.['required']">Tanggal lahir wajib diisi.</span>
+          </mat-error>
+         </mat-form-field>
+        </div>
+
       <button type="submit" class="register-button" [disabled]="registerForm.invalid">Register</button>
     </form>
 

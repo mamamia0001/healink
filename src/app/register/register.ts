@@ -6,7 +6,9 @@ import { FormsModule } from '@angular/forms'; // Diperlukan untuk [(ngModel)]
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
 import { MatIconModule } from '@angular/material/icon';
-import { ReactiveFormsModule } from '@angular/forms'; // Tambahkan ini jika Anda berencana menggunakan Reactive Forms nanti
+import { ReactiveFormsModule } from '@angular/forms';
+import { MatDatepickerModule } from '@angular/material/datepicker';
+import { MatNativeDateModule } from '@angular/material/core'; // Tambahkan ini jika Anda berencana menggunakan Reactive Forms nanti
 
 @Component({
   selector: 'app-register',
@@ -20,19 +22,23 @@ import { ReactiveFormsModule } from '@angular/forms'; // Tambahkan ini jika Anda
     MatFormFieldModule,
     MatInputModule,
     MatIconModule,
-    ReactiveFormsModule // Opsional, tambahkan jika Anda menggunakannya
+    MatNativeDateModule,
+    MatDatepickerModule,
+    ReactiveFormsModule, // Opsional, tambahkan jika Anda menggunakannya
   ]
 })
 export class Register {
   username: string = '';
   email: string = '';
   password: string = '';
+  mobileNumber: String = '';
+  tanggalLahir: String = '';
 
   constructor() { }
 
   register(): void {
     // Implementasikan logika registrasi Anda di sini
-    console.log('Mendaftarkan pengguna:', this.username, this.email, this.password);
+    console.log('Mendaftarkan pengguna:', this.username, this.email, this.password, this.mobileNumber, this.tanggalLahir);
     // Panggil layanan otentikasi Anda untuk menangani pendaftaran
   }
 }
