@@ -19,25 +19,16 @@ import { RouterModule } from '@angular/router'; // Untuk routerLink di HTML
   styleUrls: ['./login.css'] // Menunjuk ke file CSS
 })
 export class Login {
-  // Properti untuk menyimpan nilai dari input field
-  username: string = '';
+  email: string = '';
   password: string = '';
+  rememberMe: boolean = false;
 
-  constructor() { }
-
-  // Metode yang akan dipanggil saat tombol login diklik
-  login(): void {
-    console.log('Username:', this.username);
-    console.log('Password:', this.password);
-
-    // TODO: Di sini Anda akan menambahkan logika otentikasi sebenarnya.
-    // Contoh: Memanggil service otentikasi, mengirim data ke backend, dll.
-    if (this.username === 'user' && this.password === 'pass') {
-      alert('Login Berhasil!'); // Ganti dengan navigasi ke dashboard
-      // Contoh navigasi (Anda perlu menginjeksi Router di constructor)
-      // this.router.navigate(['/dashboard']);
+  login() {
+    if (this.email && this.password) {
+      alert(`Email: ${this.email}\nPassword: ${this.password}\nRemember me: ${this.rememberMe}`);
+      // Di sini kamu bisa tambahkan logika autentikasi jika backend sudah ada
     } else {
-      alert('Username atau Password salah!');
+      alert('Please enter both email and password.');
     }
   }
 }

@@ -1,26 +1,29 @@
 <div class="login-container">
-  <div class="login-card">
-    <div class="brand-section">
-      <img src="assets/healink_logo.png" alt="HEALINK Logo" class="brand-logo">
-      <p class="brand-tagline">"keep in track!"</p>
+  <div class="login-left">
+    <img src="assets/doctor-illustration.png" alt="Doctors" />
+  </div>
+
+  <div class="login-right">
+    <div class="logo">
+      <img src="assets/healink_logo.png" alt="Healink Logo" />
     </div>
 
-    <form class="login-form" (ngSubmit)="login()">
-      <div class="input-group">
-        <mat-icon class="input-icon">person</mat-icon>
-        <input type="text" placeholder="Username" class="input-field" required [(ngModel)]="username" name="username">
+    <form>
+      <label for="email">Email</label>
+      <input type="email" id="email" placeholder="healme@example.com" [(ngModel)]="email" name="email" />
+
+      <label for="password">Password</label>
+      <input type="password" id="password" placeholder="***********" [(ngModel)]="password" name="password" />
+
+      <div class="options">
+        <label>
+          <input type="checkbox" [(ngModel)]="rememberMe" name="remember" />
+          Remember me
+        </label>
+        <a href="#">Forgot Password?</a>
       </div>
 
-      <div class="input-group">
-        <mat-icon class="input-icon">lock</mat-icon>
-        <input type="password" placeholder="Password" class="input-field" required [(ngModel)]="password" name="password">
-      </div>
-
-      <button type="submit" class="login-button">Login</button>
+      <button type="button" (click)="login()">Login</button>
     </form>
-
-    <div class="register-section">
-      Don't have an account? <a routerLink="/register" class="register-link">Register</a>
-    </div>
   </div>
 </div>
