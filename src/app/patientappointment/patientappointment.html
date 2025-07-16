@@ -1,0 +1,71 @@
+<!-- Container utama yang membungkus sidebar dan konten utama -->
+<div class="page-container">
+  
+  <!-- Sidebar Navigasi -->
+  <aside class="sidebar">
+    <div class="sidebar-header">
+      <h1 class="logo">HEALINK</h1>
+    </div>
+    <nav class="sidebar-nav">
+      <p class="nav-category">General</p>
+      <ul>
+        <li><a href="#">Dashboard</a></li>
+        <li><a href="#" class="active">Appointment</a></li>
+        <li><a href="#">Settings</a></li>
+        <li><a href="#">Help & Support</a></li>
+      </ul>
+    </nav>
+    <div class="sidebar-footer">
+      <a href="#" (click)="logout()">
+        <i class="icon-logout"></i> <!-- Placeholder untuk ikon logout -->
+        Log Out
+      </a>
+    </div>
+  </aside>
+
+  <!-- Konten Utama -->
+  <main class="main-content">
+    
+    <!-- Header Konten Utama -->
+    <header class="main-header">
+      <div class="greeting">
+        <h2>Hello, {{ userName }}</h2>
+        <p>welcome to HEALINK's Appointment page!</p>
+      </div>
+      <div class="header-actions">
+        <div class="search-bar">
+          <i class="icon-search"></i> <!-- Placeholder untuk ikon cari -->
+          <input type="text" placeholder="search...">
+          <button class="clear-search">&times;</button>
+        </div>
+        <button class="icon-button"><i class="icon-bell"></i></button> <!-- Placeholder ikon notifikasi -->
+        <button class="icon-button"><i class="icon-chat"></i></button> <!-- Placeholder ikon chat -->
+        <div class="status">
+          STATUS: <strong>Patient</strong>
+        </div>
+      </div>
+    </header>
+
+    <!-- Body Konten Utama -->
+    <div class="content-body">
+      <!-- Tampilan ini muncul jika tidak ada appointment -->
+      <div *ngIf="!hasAppointment" class="empty-state">
+        <img src="https://storage.googleapis.com/gemini-prod/images/1721096180183_1.png" alt="No Appointment Illustration" class="empty-state-img">
+        <h3 class="oops-text">Oops</h3>
+        <p class="empty-state-message">seems like you had no appointment yet</p>
+        <p class="empty-state-submessage">Click the button bellow to make one!</p>
+        <button class="create-appointment-btn" (click)="createAppointment()">
+          <span class="plus-icon">+</span> Create Appointment
+        </button>
+      </div>
+
+      <!-- Anda bisa menambahkan tampilan lain di sini jika 'hasAppointment' bernilai true -->
+      <div *ngIf="hasAppointment" class="appointment-list">
+        <!-- Tampilkan daftar appointment di sini -->
+        <h2>Your Appointments</h2>
+        <p>Daftar janji temu akan muncul di sini.</p>
+      </div>
+    </div>
+
+  </main>
+</div>
