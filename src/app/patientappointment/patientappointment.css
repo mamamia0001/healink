@@ -1,19 +1,6 @@
 /* Import Font dari Google Fonts */
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap');
 
-/* Variabel CSS untuk konsistensi warna dan font */
-:root {
-  --primary-dark: #0D1B34;
-  --primary-blue: #2A4A8A;
-  --background-light: #F0F2F5;
-  --text-dark: #333333;
-  --text-light: #FFFFFF;
-  --text-secondary: #6c757d;
-  --accent-red: #C73A3A;
-  --border-color: #DEE2E6;
-  --font-family: 'Poppins', sans-serif;
-}
-
 /* Reset dasar dan styling body */
 body {
   margin: 0;
@@ -30,13 +17,12 @@ body {
 
 /* Styling Sidebar */
 .sidebar {
-  width: 260px;
-  background-color: var(--primary-dark);
-  color: var(--text-light);
+  width: 220px;
+  background-color: #0B2656;
+  color: #fff;
+  padding: 20px;
   display: flex;
   flex-direction: column;
-  padding: 24px;
-  flex-shrink: 0;
 }
 
 .sidebar-header .logo {
@@ -52,6 +38,7 @@ body {
   color: #8A92A6;
   margin-bottom: 10px;
   padding-left: 16px;
+  background-color: rgba(255, 255, 255, 0.1);
 }
 
 .sidebar-nav ul {
@@ -85,14 +72,15 @@ body {
 }
 
 .sidebar-footer a {
-  display: flex;
-  align-items: center;
-  gap: 10px;
-  color: #E0E0E0;
-  text-decoration: none;
-  padding: 12px 16px;
-  border-radius: 8px;
+
+  margin-top: auto;
+  background: none;
+  border: 1px solid #fff;
+  color: #fff;
+  padding: 10px;
+  cursor: pointer;
 }
+
 
 .sidebar-footer a:hover {
   background-color: rgba(255, 255, 255, 0.1);
