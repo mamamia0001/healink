@@ -2,25 +2,18 @@
 <div class="page-container">
   
   <!-- Sidebar Navigasi -->
-  <aside class="sidebar">
-    <div class="sidebar-header">
-      <img src="assets/healink_logo2.png" alt="Healink Logo" />
-    </div>
-    <nav class="sidebar-nav">
-      <p class="nav-category">General</p>
+   <aside class="sidebar">
+     <img src="assets/healink_logo2.png" alt="Healink Logo" />
+    <nav>
       <ul>
-        <li><a href="#">Dashboard</a></li>
-        <li><a href="#" class="active">Appointment</a></li>
-        <li><a href="#">Settings</a></li>
-        <li><a href="#">Help & Support</a></li>
+        <li>Dashboard</li>
+        <li>Appointment</li>
+        <br>
+        <li>Settings</li>
+        <li>Help & Support</li>
       </ul>
     </nav>
-    <div class="sidebar-footer">
-      <a href="#" (click)="logout()">
-        <i class="icon-logout"></i> <!-- Placeholder untuk ikon logout -->
-        Log Out
-      </a>
-    </div>
+    <button class="logout">Log Out</button>
   </aside>
 
   <!-- Konten Utama -->
@@ -34,14 +27,8 @@
       </div>
       <div class="header-actions">
         <div class="search-bar">
-          <i class="icon-search"></i> <!-- Placeholder untuk ikon cari -->
           <input type="text" placeholder="search...">
           <button class="clear-search">&times;</button>
-        </div>
-        <button class="icon-button"><i class="icon-bell"></i></button> <!-- Placeholder ikon notifikasi -->
-        <button class="icon-button"><i class="icon-chat"></i></button> <!-- Placeholder ikon chat -->
-        <div class="status">
-          STATUS: <strong>Patient</strong>
         </div>
       </div>
     </header>
@@ -50,12 +37,12 @@
     <div class="content-body">
       <!-- Tampilan ini muncul jika tidak ada appointment -->
       <div *ngIf="!hasAppointment" class="empty-state">
-        <img src="https://storage.googleapis.com/gemini-prod/images/1721096180183_1.png" alt="No Appointment Illustration" class="empty-state-img">
+        <img src="assets/oops.png" alt="No Appointment Illustration" class="empty-state-img">
         <h3 class="oops-text">Oops</h3>
         <p class="empty-state-message">seems like you had no appointment yet</p>
         <p class="empty-state-submessage">Click the button bellow to make one!</p>
         <button class="create-appointment-btn" (click)="createAppointment()">
-          <span class="plus-icon">+</span> Create Appointment
+           Create Appointment
         </button>
       </div>
 

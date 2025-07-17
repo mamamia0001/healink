@@ -25,54 +25,21 @@ body {
   flex-direction: column;
 }
 
-.sidebar-header .logo {
-  font-size: 24px;
-  font-weight: 700;
-  margin: 0 0 40px 0;
-  text-align: center;
+.sidebar h2 {
+  margin-bottom: 40px;
 }
 
-.sidebar-nav .nav-category {
-  font-size: 12px;
-  text-transform: uppercase;
-  color: #8A92A6;
-  margin-bottom: 10px;
-  padding-left: 16px;
-  background-color: rgba(255, 255, 255, 0.1);
-}
-
-.sidebar-nav ul {
+.sidebar ul {
   list-style: none;
-  padding: 0;
-  margin: 0;
+  margin-bottom: auto;
 }
 
-.sidebar-nav ul li a {
-  display: block;
-  color: #E0E0E0;
-  text-decoration: none;
-  padding: 12px 16px;
-  margin-bottom: 8px;
-  border-radius: 8px;
-  transition: background-color 0.3s, color 0.3s;
+.sidebar ul li {
+  margin: 20px 0;
+  cursor: pointer;
 }
 
-.sidebar-nav ul li a:hover {
-  background-color: rgba(255, 255, 255, 0.1);
-}
-
-.sidebar-nav ul li a.active {
-  background-color: var(--primary-blue);
-  color: var(--text-light);
-  font-weight: 600;
-}
-
-.sidebar-footer {
-  margin-top: auto;
-}
-
-.sidebar-footer a {
-
+.logout {
   margin-top: auto;
   background: none;
   border: 1px solid #fff;
@@ -81,10 +48,6 @@ body {
   cursor: pointer;
 }
 
-
-.sidebar-footer a:hover {
-  background-color: rgba(255, 255, 255, 0.1);
-}
 
 /* Styling Konten Utama */
 .main-content {
@@ -120,28 +83,30 @@ body {
 
 .search-bar {
   display: flex;
-  align-items: center;
-  background-color: #fff;
-  border: 1px solid var(--border-color);
-  border-radius: 8px;
-  padding: 4px 12px;
-  width: 300px;
+  background-color: #EAEAEA;
+  border: 2px; 
+  border-radius: 20px;
+  padding: 2px 2px;
+  width: 500px;
 }
 
 .search-bar input {
   border: none;
   outline: none;
-  width: 100%;
+  border-radius: 20px;
+  width: 500px;
   padding: 8px;
   font-size: 14px;
+  background-color: #EAEAEA;
+  border-color: #0B2656;
 }
 
 .search-bar .clear-search {
   background: none;
-  border: none;
+  border:none;
   cursor: pointer;
   font-size: 20px;
-  color: var(--text-secondary);
+  color: #fff;
 }
 
 .icon-button {
@@ -182,13 +147,13 @@ body {
 }
 
 .empty-state-img {
-  width: 250px;
+  width: 330px;
   height: auto;
   margin-bottom: 20px;
 }
 
 .oops-text {
-  font-size: 48px;
+  font-size: 20px;
   color: var(--accent-red);
   margin: 0;
   font-weight: 700;
@@ -208,8 +173,8 @@ body {
 }
 
 .create-appointment-btn {
-  background-color: var(--accent-red);
-  color: var(--text-light);
+  background-color: #0B2656;
+  color: #fff;
   border: none;
   border-radius: 8px;
   padding: 12px 24px;
@@ -220,17 +185,8 @@ body {
   align-items: center;
   gap: 8px;
   margin-top: 20px;
-  transition: background-color 0.3s;
 }
 
-.create-appointment-btn:hover {
-  background-color: #a52a2a; /* Warna merah lebih gelap saat hover */
-}
-
-.create-appointment-btn .plus-icon {
-  font-size: 20px;
-  font-weight: bold;
-}
 
 /* Placeholder untuk ikon (ganti dengan library ikon jika ada) */
 .icon-search::before { content: '🔍'; }
